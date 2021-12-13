@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+
+    <style>
+        .container-fluid {
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-auto {
+            flex: 0 0 auto;
+            width: auto;
+        }
+
+        .col-md-1 {
+            flex: 0 0 auto;
+            width: 8.33333333%;
+        }
+
+        .col-md-2 {
+            flex: 0 0 auto;
+            width: 16.66666667%;
+        }
+
+        .col-md-3 {
+            flex: 0 0 auto;
+            width: 25%;
+        }
+
+        .col-md-4 {
+            flex: 0 0 auto;
+            width: 33.33333333%;
+        }
+
+        .col-md-5 {
+            flex: 0 0 auto;
+            width: 41.66666667%;
+        }
+
+        .col-md-6 {
+            flex: 0 0 auto;
+            width: 50%;
+        }
+
+        .col-md-7 {
+            flex: 0 0 auto;
+            width: 58.33333333%;
+        }
+
+        .col-md-8 {
+            flex: 0 0 auto;
+            width: 66.66666667%;
+        }
+
+        .col-md-9 {
+            flex: 0 0 auto;
+            width: 75%;
+        }
+
+        .col-md-10 {
+            flex: 0 0 auto;
+            width: 83.33333333%;
+        }
+
+        .col-md-11 {
+            flex: 0 0 auto;
+            width: 91.66666667%;
+        }
+
+        .col-md-12 {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        body {
+            padding: 0%;
+            margin: 3%;
+        }
+
+        .footer {
+            width: 100%;
+            /* height: 50px; */
+            /* padding-left: 10px; */
+            /* line-height: 50px; */
+            /* position: absolute; */
+            bottom: 0px;
+            display: flex;
+        }
+
+        header {
+            width: 100%;
+
+            top: 0px;
+            display: flex;
+        }
+
+        .fileUpload {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        .fileUpload input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="header" style="border: 2px solid black;">
+            <div class="col-md-1 text-center" style="border-right: 2px solid black;">Home</div>
+            <div class="col-md-3 text-center" style="border-right: 2px solid black;">Generated Link</div>
+            <div class="col-md-3 text-center" style="border-right: 2px solid black;">Transaction History</div>
+            <div class="col-md-2 text-center" style="border-right: 2px solid black;">Policy</div>
+            <div class="col-md-3 text-center">Logout</div>
+        </header>
+
+        <form class="row">
+            <div class="col-md-3" style="margin-top: 3%;">
+                <img src="../../../week2/tugas/checkout/HITAM.png" width="60%" alt="" srcset=""> <br>
+
+                <div class="fileUpload">
+                    <div
+                        style="border: 2px solid black; width: max-content; text-align: center; padding: 2px; box-shadow: 2px 2px 2px black;">
+                        Upload
+                        Picture</div>
+                    <input class="upload" type="file" />
+                </div>
+
+            </div>
+            <div class="col-md-9" style="margin-top: 3%;">
+                <div class="row">
+                    <div class="col-md-3">Title Here : </div>
+                    <div class="col-md-9"><input type="text" style="width: 90%;" placeholder="MacBook Air $800"></div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">Description : </div>
+                    <div class="col-md-9"><textarea name="" id="" cols="94%" rows="10">Year : 2004
+
+Model : 
+
+
+Condition : Mint
+                    </textarea>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">Account Number : </div>
+                    <div class="col-md-9"><input type="tel" style="width: 90%;" placeholder="123-456-789-0"></div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">Bank : </div>
+                    <div class="col-md-9">
+                        <select name="" id="" style="width: 70%;">
+                            <option value="" selected>HBSC</option>
+                            <option value="">BRI</option>
+                            <option value="">BRI</option>
+                            <option value="">MANDIRI</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">Account Holder : </div>
+                    <div class="col-md-9"><input type="text" style="width: 80%;" placeholder="Name Here"></div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">Transaction : </div>
+                    <div class="col-md-9"><input type="number" style="width: 5%;" min="1" placeholder="1"> <br>
+                        <strong>* if the
+                            transaction is
+                            for 3 person, choose 3 from drop-down list</strong>
+                        <br><br>
+                        <input type="checkbox" name=""> <label for="">Send
+                            Mobile Phone</label>
+
+                        <br>
+                        <input type="checkbox" name=""> <label for="">Send
+                            To Email</label>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-3">Send to Mobile Phone </div>
+                    <div class="col-md-9"><input type="text" style="width: 85%;" placeholder="1234567890, 1234567891">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">Send to Email : </div>
+                    <div class="col-md-9"><input type="text" style="width: 85%;"
+                            placeholder="mfmm2g13@soton acuk, fys_06@yahoo.com"></div>
+                </div>
+
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-md-12 text-center"><button
+                            style="background-color: green; color: white; border: 2px solid black;"
+                            type="submit">Generate
+                            Nobr Link</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

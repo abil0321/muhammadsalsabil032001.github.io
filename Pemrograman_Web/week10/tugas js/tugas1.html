@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html</title>
+
+    <style>
+        td {
+            padding: 10px 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table style="width: 50%; background-color: black; text-align: center;">
+            <thead style="background-color: white;">
+                <tr>
+                    <td>Masukkan Nilai</td>
+                    <td>valas</td>
+                    <td>Nilai Rupiah</td>
+                </tr>
+            </thead>
+
+            <tbody style="background-color: white;">
+                <tr>
+                    <td><input type="number" name="" id="input"></td>
+                    <td>
+                        <select name="" id="pilihan" onchange="kali()">
+                            <option value="" id="">Pilih ... </option>
+                            <option value="isi2">Dollar US</option>
+                            <option value="isi3">Dollar Singapore</option>
+                            <option value="isi4">Ringgit Malaysia</option>
+                            <option value="isi5">Yen Jepang</option>
+                            <option value="isi6">Euro</option>
+                            <option value="isi7">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td id="hasil"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </center>
+    <script>
+        function kali() {
+            let input, pilih
+            input = document.getElementById("input").value
+            pilih = document.getElementById("pilihan").value
+
+            if (pilih == "isi2") {
+                let hasil = input * 9915
+                console.log(hasil)
+                document.getElementById("hasil").innerHTML = hasil
+            }
+
+            else if (pilih == "isi3") {
+                let hasil = input * 13472
+                console.log(hasil)
+                document.getElementById("hasil").innerHTML = hasil
+            }
+
+            else if (pilih == "isi4") {
+                let hasil = input * 847
+                console.log(hasil)
+                document.getElementById("hasil").innerHTML = hasil
+
+            }
+
+            else if (pilih == "isi5") {
+                let hasil = input * 120
+                console.log(hasil)
+                document.getElementById("hasil").innerHTML = hasil
+
+            }
+
+            else if (pilih == "isi6") {
+                let hasil = input * 15888
+                console.log(hasil)
+                document.getElementById("hasil").innerHTML = hasil
+
+            }
+
+            else if (pilih == "isi7") {
+                let hasil = input * 3592
+                console.log(hasil)
+                document.getElementById("hasil").innerHTML = hasil
+
+            }
+            else {
+                console.log("Tidak ada yang di pilih")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

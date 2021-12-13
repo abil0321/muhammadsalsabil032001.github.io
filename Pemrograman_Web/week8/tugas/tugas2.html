@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 6.2</title>
+
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: #f1f1f1;
+
+        }
+
+        .flex-container>div {
+            color: black;
+            width: 100px;
+            margin: 0;
+            text-align: start;
+            font-size: 30px;
+        }
+
+        .flex-container>div>span {
+            margin: 35px;
+        }
+
+        .flex-container>div>div>span {
+            margin: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flex-container">
+        <div style="flex-grow: 2; background-color: pink; padding-top: 10px;"><span>Nav</span>
+        </div>
+        <div style="flex-grow: 8; background-color: rgb(255, 216, 143);">
+            <div style="background-color: rgb(255, 216, 143); line-height: 75px;"><span>Header</span></div>
+            <div class="flex-container" style="background-color: pink; line-height: 475px;">
+                <div style="flex-grow: 8; background-color: white;"><span>Article</span></div>
+                <div style="flex-grow: 2; background-color: aqua;"><span>Aside</span></div>
+            </div>
+            <div style="background-color: rgb(255, 216, 143); line-height: 75px;"><span>Footer</span></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
