@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Validasi</title>
+</head>
+
+<style>
+    form>div {
+        margin: 20px;
+    }
+</style>
+
+<body>
+    <div class="login">
+        <form onsubmit="validasi()">
+            <div>
+                <label>Nama Lengkap:</label>
+                <input type="text" name="nama" id="nama" max="30" />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div>
+                <label>Tujuan:</label>
+                <textarea cols="40" rows="5" name="alamat" id="alamat"></textarea>
+            </div>
+
+            <div>
+                <label>Jumlah Tiket:</label>
+                <input type="number" name="tiket" id="tiket" max="10" />
+            </div>
+
+            <div>
+                <label>Jam Keberangkatan:</label>
+                <input type="time" name="time" id="time">
+            </div>
+
+            <div>
+                <input type="submit" value="Daftar" class="tombol">
+            </div>
+        </form>
+
+        <div id="hasil">Bangke</div>
+    </div>
+</body>
+<script>
+    function validasi() {
+        var nama = document.getElementById("nama").value;
+        var email = document.getElementById("email").value;
+        var alamat = document.getElementById("alamat").value;
+        var tiket = document.getElementById("tiket").value;
+        var time = document.getElementById("time").value;
+
+        if (nama != "" && email != "" && alamat != "" && tiket != "" && time != "") {
+            return true;
+
+        } else if (nama >= 31) {
+            alert('Namanya kelebihan mas !!');
+        } else if (tiket >= 11) {
+            alert('Tiketnya kelebihan mas !!');
+        }
+        else {
+            // alert('Anda harus mengisi data dengan lengkap !');
+            document.getElementById("hasil").style.backgroundColor = "red"
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        .hasil {
+            width: 40%;
+            height: 40%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select name="" id="pilihan" onchange="gambar()">
+        <option value="" id="">Pilih ... </option>
+        <option value="isi2">Monyet</option>
+        <option value="isi3">Singa</option>
+        <option value="isi4">Anjing</option>
+        <option value="isi5">Kucing</option>
+        <option value="isi6">Kura-Kura</option>
+    </select>
+
+    <br><br>
+
+    <div id="hasil">
+
+    </div>
+
+    <script>
+        function gambar() {
+            let pilih
+            pilih = document.getElementById("pilihan").value
+
+            if (pilih == "isi2") {
+                let gbr = document.getElementById("hasil")
+                gbr.innerHTML = '<img src="gambar/monyet.jpg" alt="" srcset="">'
+
+                // var image = new Image(300, 300)
+                // image.src = "gambar/monyet.jpg"
+                // document.getElementById("hasil").appendChild(image)
+
+            }
+
+            else if (pilih == "isi3") {
+                let gbr = document.getElementById("hasil")
+                gbr.innerHTML = '<img src="gambar/singa.jpeg" alt="" srcset="">'
+            }
+
+            else if (pilih == "isi4") {
+                let gbr = document.getElementById("hasil")
+                gbr.innerHTML = '<img src="gambar/anjing.jpg" alt="" srcset="">'
+            }
+
+            else if (pilih == "isi5") {
+                let gbr = document.getElementById("hasil")
+                gbr.innerHTML = '<img src="gambar/kucing.jfif" alt="" srcset="">'
+            }
+
+            else if (pilih == "isi6") {
+                let gbr = document.getElementById("hasil")
+                gbr.innerHTML = '<img src="gambar/kura.jfif" alt="" srcset="">'
+            }
+            else {
+                let gbr = document.getElementById("hasil")
+                gbr.innerHTML = 'Ga milih apa-apa mas !!'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

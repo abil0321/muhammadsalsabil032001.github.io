@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2</title>
+
+    <style>
+        * {
+            padding: 0;
+        }
+
+        .container-fluid {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 50%;
+            /* border: 2px solid black; */
+        }
+
+        .container {
+            border: 2px solid black;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container-fluid">
+            <div id="container" class="container"
+                style="height: 95%; width: 100%; text-align: left; background-color: whitesmoke;">
+                <p>start the chat</p>
+            </div>
+
+            <div class="container" style="width: 100%; height: 5%;display: flex; justify-content: space-between;">
+                <input type="text" name="" id="input" style="width: 80%;">
+                <button onclick="kirim()" style="width: 18%;"> kirim</button>
+            </div>
+        </div>
+    </center>
+    <script>
+
+        function kirim() {
+
+            let elemen, teks, parent, input
+            input = document.getElementById("input").value
+
+            // buat node
+            elemen = document.createElement("p") // membuat elemen p yang baru ( <p> </p> )
+            teks = document.createTextNode(input) // membuat text/isi untuk mengambil value dari inputan
+
+            // menambah child ke parent nya --> elemen
+            elemen.appendChild(teks)
+
+            // seleksi parent untuk ditambah
+            parent = document.getElementById("container")
+
+            // menambah child di parent
+            parent.appendChild(elemen)
+
+        }
+    </script>
+</body>
+
+</html>

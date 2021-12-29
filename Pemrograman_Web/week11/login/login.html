@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    <form action="dashboard.html" method="get" onsubmit="kirim()">
+        
+        <input type="text" name="" id="username">
+        <input type="password" name="" id="password">
+        <button type="submit">Sign In</button>
+    </form> -->
+
+    <!-- 
+    <form action="dashboard.html" method="get">
+        <input type="text" name="" id="username" onchange="kirim()">
+        <input type="password" name="" id="password" onchange="kirim()">
+        <button type="submit">Sign In</button>
+    </form> -->
+
+
+    <form id="form" onsubmit="kirim()">
+        <input type="text" name="" id="username">
+        <input type="password" name="" id="password">
+        <button type="submit">Sign In</button>
+    </form>
+
+    <script>
+
+        function kirim() {
+            let input = document.getElementById("username").value
+            let password = document.getElementById("password").value
+            let form = document.getElementById("form")
+
+
+
+            if (input == "ahmad2017" && password == "integrity") {
+                form.setAttribute('action', 'dashboard.html')
+                window.alert("Login Berhasil")
+
+            } else {
+                window.alert("Login Gagal")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
