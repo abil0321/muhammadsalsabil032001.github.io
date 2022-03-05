@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Nilai IfElse</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<h3 class="text-center mt-3">Form Input Nilai</h3>
 <div class="border border-primary rounded m-5 p-4">
-  <form method="GET" action="form.php" autocomplete="off">
+  <form method="POST" action="nilai_siswa_ifElse.php" autocomplete="off">
   <div class="form-group row">
     <label for="nama" class="col-4 col-form-label">Nama Lengkap</label> 
     <div class="col-8">
@@ -80,60 +81,6 @@
     </div>
   </div>
 </form>
-</div>
-
-<div class="border border-danger rounded m-5 p-4">
-<?php
-if (isset($_GET['proses'])) {
-  $_nama = $_GET['nama'];
-  $_matkul = $_GET['matkul'];
-// if ($_matkul == 'DDP') {
-//   $nama_matkul = 'Dasar-Dasar Pemrograman';
-// } elseif($_matkul == 'BDI') {
-//   $nama_matkul = 'Basis Data';
-// } elseif($_matkul == 'WEB1') {
-//   $nama_matkul = 'Pemrograman Web';
-// }
-
-switch ($_matkul) {
-  case 'DDP':
-    $nama_matkul = 'Dasar-Dasar Pemrograman'; 
-    break;
-  case 'BDI':
-    $nama_matkul = 'Basis Data'; 
-    break;
-  case 'WEB1':
-    $nama_matkul = 'Pemrograman WEB'; 
-    break;    
-  default:"";
-}
-  $_proses = $_GET['proses'];
-  $_nilaiUas = $_GET['nilai_uas'];
-  $_uts = $_GET['nilai_uts'];
-  $_uas = $_GET['nilai_uas'];
-  $_tugas = $_GET['nilai_tugas'];
-
-  $nilai_akhir = ($_uts + $_tugas + $_uas)/3;
-
-  // echo 'Nama : '. $_nama;
-  // echo '<br>Mata Kuliah : '. $_matkul;
-  // echo '<br>Nilai UAS : '. $_uas;
-  // echo '<br>Nilai UTS : '. $_uts;
-  // echo '<br>Nilai Tugas : '. $_tugas;
-
-  
-}else {
-  echo "Silahkan Isi Form Diatas Terlebih Dahulu";
-}
-?>
-
-<P>Proses : <?= $_proses  ?></P><br>
-<P>Nama : <?= $_nama  ?></P>
-<P>Mata Kuliah : <?= $nama_matkul  ?></P>
-<P>Nilai UAS : <?= $_uas  ?></P>
-<P>Nilai UTS : <?= $_uts  ?></P>
-<P>Nilai Tugas : <?= $_tugas  ?></P>
-<P>Nilai Akhir : <?= $nilai_akhir  ?></P>
 </div>
 
 </body>
