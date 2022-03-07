@@ -11,6 +11,8 @@
 <body>
     <div class="border border-primary rounded m-5 p-4">
 
+    <div class="row">
+      <div class="col-md-7">
 <form method="POST" action="form_belanja.php">
   <div class="form-group row">
     <label for="nama" class="col-4 col-form-label">Costumer</label> 
@@ -87,6 +89,18 @@ echo '<br><br>Total Harga : '. number_format($total_harga);
 
 ?>
     </div>
+</div>
+</div>
+
+<div class="col-md-4 ml-5">
+<ul class="list-group">
+  <li class="list-group-item active">Daftar Harga</li>
+  <li class="list-group-item">TV : 4.200.000></li>
+  <li class="list-group-item">Kulkas : 3.100.000</li>
+  <li class="list-group-item">MESIN CUCI : 3.800.000</li>
+  <li class="list-group-item active">Harga Dapat Berubah Setiap Saat</li>
+</ul>
+</div>
 </div>
 
     </div>
