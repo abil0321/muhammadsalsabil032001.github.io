@@ -81,7 +81,23 @@ if ($_produk == 'tv') {
     "mana ada mas !!!";
 }
 
-echo 'Nama : '. $_nama;
+switch ($_produk) {
+  case('tv') :
+      $nama_produk = "TV";
+      break;
+  case ('kulkas'):
+      $nama_produk = "KULKAS"; 
+      break;
+  
+  case ('mesin_cuci'):
+      $nama_produk = "MESIN CUCI"; 
+      break;
+
+  default:
+      echo "mana ada mass !!";
+}
+
+echo 'Nama : '. $nama_produk;
 echo '<br>Produk Pilihan : '. $_produk;
 echo '<br>Jumlah : '. $_jumlah;
 
