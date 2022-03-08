@@ -18,6 +18,7 @@
     $grade = predikat($nilai_akhir);
     $pernyataan = kelulusan($nilai_akhir);
     $predikat = grade($grade);
+    $nama_matkul = matkul($_matkul);
     
 ?>
 

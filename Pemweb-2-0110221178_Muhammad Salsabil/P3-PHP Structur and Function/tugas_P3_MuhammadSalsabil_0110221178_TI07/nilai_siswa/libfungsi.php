@@ -2,18 +2,21 @@
 $_proses = $_POST['proses'];
 $_nama = $_POST['nama'];
 $_matkul = $_POST['matkul'];
-switch ($_matkul) {
-    case 'DDP':
-      $nama_matkul = 'Dasar-Dasar Pemrograman'; 
-      break;
-    case 'BDI':
-      $nama_matkul = 'Basis Data'; 
-      break;
-    case 'WEB1':
-      $nama_matkul = 'Pemrograman WEB'; 
-      break;    
-    default:"";
-  }
+function matkul($_namaMatkul){
+    switch ($_namaMatkul) {
+        case 'DDP':
+          $nama_matkul = 'Dasar-Dasar Pemrograman'; 
+          break;
+        case 'BDI':
+          $nama_matkul = 'Basis Data'; 
+          break;
+        case 'WEB1':
+          $nama_matkul = 'Pemrograman WEB'; 
+          break;    
+        default:"";
+      }
+      return $nama_matkul;
+}
     $_proses = $_POST['proses'];
     $_nilaiUas = $_POST['nilai_uas'];
     $_uts = $_POST['nilai_uts'];
