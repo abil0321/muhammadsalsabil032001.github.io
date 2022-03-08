@@ -55,22 +55,34 @@ switch ($_matkul) {
         echo "mana ada mas !!!";
     }
     
-if (!empty($_proses)) {
-  
-    // echo 'Proses : '. $_proses;
-    // echo '<br><br>Nama : '. $_nama;
-    // echo '<br>Mata Kuliah : '. $_matkul;
-    // echo '<br>Nilai UAS : '. $_uas;
-    // echo '<br>Nilai UTS : '. $_uts;
-    // echo '<br>Nilai Tugas : '. $_tugas;
+    switch ($grade) {
+      case('A') :
+          $predikat = "Sangat Memuaskan";
+          break;
+      case ('B'):
+          $predikat = "Memuaskan"; 
+          break;
+      
+      case ('C'):
+          $predikat = "Cukup"; 
+          break;
 
-    // echo '<br><br>Nilai Akhir : ' . $nilai_akhir;
-    // echo '<br>Dinyatakan : ' . $pernyataan;
-    // echo '<br>Grading : ' . $grade;
-  
-}else {
-  echo "Silahkan Isi Form Diatas Terlebih Dahulu";
-}
+      case ($nilai_akhir >= 70 && $nilai_akhir <= 84):
+          $grade = "B"; 
+          break;
+
+      case ('D'):
+          $predikat = "Kurang"; 
+          break;
+      case ('E'):
+          $predikat = "Sangat Kurang"; 
+          break;
+      case ('I'):
+          $predikat = "Tidak Ada"; 
+          break;
+      default:
+          echo "mana ada mass !!";
+  }
 ?>
 
 <div class="row mx-2">
@@ -126,6 +138,7 @@ if (!empty($_proses)) {
   
   </tbody>
 </table>
+<h3 class="text-right">Predikat : <?= $predikat; ?></h3>
 <h3 class="text-right">Dinyatakan : <?= $pernyataan; ?></h3>
 <h6 class="text-center py-3 mt-5" style="background-color: #5eff89;">Proses: <?= $_proses?></h6>
 
