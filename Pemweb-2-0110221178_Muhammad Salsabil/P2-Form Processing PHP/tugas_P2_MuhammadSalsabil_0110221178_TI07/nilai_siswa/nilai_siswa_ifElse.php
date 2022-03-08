@@ -67,10 +67,6 @@ switch ($_matkul) {
           $predikat = "Cukup"; 
           break;
 
-      case ($nilai_akhir >= 70 && $nilai_akhir <= 84):
-          $grade = "B"; 
-          break;
-
       case ('D'):
           $predikat = "Kurang"; 
           break;
