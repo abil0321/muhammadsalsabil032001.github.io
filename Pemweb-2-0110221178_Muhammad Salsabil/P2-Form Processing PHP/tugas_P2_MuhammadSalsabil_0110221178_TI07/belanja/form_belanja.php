@@ -97,8 +97,8 @@ switch ($_produk) {
       echo "mana ada mass !!";
 }
 
-echo 'Nama : '. $nama_produk;
-echo '<br>Produk Pilihan : '. $_produk;
+echo 'Nama : '. $_nama;
+echo '<br>Produk Pilihan : '. $nama_produk;
 echo '<br>Jumlah : '. $_jumlah;
 
 echo '<br><br>Total Harga : '. number_format($total_harga);
