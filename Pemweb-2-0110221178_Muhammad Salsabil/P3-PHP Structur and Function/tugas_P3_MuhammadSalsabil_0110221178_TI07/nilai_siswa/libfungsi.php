@@ -25,7 +25,7 @@ function matkul($_namaMatkul){
     $nilai_akhir = ($_uts + $_tugas + $_uas)/3;
 
 function kelulusan($_nilai)
-{
+{ 
     if ($_nilai <= 55) {
         $pernyataan = 'Tidak Lulus';
     } else {
