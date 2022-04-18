@@ -37,10 +37,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-
         <br><br>
-
-
     </div>
 </body>
 
