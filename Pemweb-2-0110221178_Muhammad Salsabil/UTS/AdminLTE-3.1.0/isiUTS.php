@@ -16,7 +16,7 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body p-3">
-        <form style="border: 1px solid orange;" class="p-3" action="uts.php" method="GET">
+        <form style="border: 1px solid orange;" class="p-3" action="uts.php" method="POST">
           <div class="form-group row">
             <label for="id" class="col-4 col-form-label">ID Person</label>
             <div class="col-8">
@@ -133,18 +133,18 @@
 
         <?php
         require_once "class_pasien.php";
-                $_submit = $_GET['submit'];
-                $_id = $_GET['id'];
-                $_kode = $_GET['kode'];
-                $_nama = $_GET['nama'];
-                $_tmp_lahir = $_GET['tmp_lahir'];
-                $_tgl_lahir = $_GET['tgl_lahir'];
-                $_email = $_GET['email'];
-                $_jk = $_GET['jk'];
-                $_id_pasien = $_GET['id_pasien'];
-                $_tanggal_regis = $_GET['tanggal_regis'];
-                $_tinggi_p = $_GET['tinggi_p'];
-                $_berat_p = $_GET['berat_p'];
+                $_submit = $_POST['submit'];
+                $_id = $_POST['id'];
+                $_kode = $_POST['kode'];
+                $_nama = $_POST['nama'];
+                $_tmp_lahir = $_POST['tmp_lahir'];
+                $_tgl_lahir = $_POST['tgl_lahir'];
+                $_email = $_POST['email'];
+                $_jk = $_POST['jk'];
+                $_id_pasien = $_POST['id_pasien'];
+                $_tanggal_regis = $_POST['tanggal_regis'];
+                $_tinggi_p = $_POST['tinggi_p'];
+                $_berat_p = $_POST['berat_p'];
         $form_tes = new Pasien($_id, $_kode, $_nama, $_tmp_lahir, $_tgl_lahir, $_email, $_jk, $_id_pasien, $_tanggal_regis, $_tinggi_p, $_berat_p);
         ?>
         <?php  if (isset($_submit)) : ?>
@@ -278,6 +278,7 @@
             </tr>
             <?php endforeach;   ?>
 
+            <?php  if (isset($_submit)) : ?>
             <tr>
               <th scope="row"><?= $no; ?></th>
               <td><?= $form_tes->tanggal ?></td>
@@ -289,6 +290,7 @@
               <td><?= $form_tes->nilai_bmi() ?></td>
               <td><?= $form_tes->status_bmi() ?></td>
             </tr>
+            <?php endif ?>
           </tbody>
         </table>
 
