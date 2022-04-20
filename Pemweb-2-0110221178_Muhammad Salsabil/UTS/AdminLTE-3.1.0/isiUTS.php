@@ -2,6 +2,231 @@
   <section class="col-lg-12 connectedSortable">
     <div class="card direct-chat direct-chat-primary">
       <div class="card-header">
+        <h3 class="card-title">Form Pengukuran BMI</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+
+          <button type="button" class="btn btn-tool" data-card-widget="remove">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body p-3">
+        <form style="border: 1px solid orange;" class="p-3" action="uts.php" method="GET">
+          <div class="form-group row">
+            <label for="id" class="col-4 col-form-label">ID Person</label>
+            <div class="col-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-address-card"></i>
+                  </div>
+                </div>
+                <input id="id" name="id" type="text" class="form-control" required="required">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="kode" class="col-4 col-form-label">Kode Pasien</label>
+            <div class="col-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-500px"></i>
+                  </div>
+                </div>
+                <input id="kode" name="kode" placeholder="Masukkan Kode Pasien" type="text" class="form-control"
+                  required="required">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nama" class="col-4 col-form-label">Nama</label>
+            <div class="col-8">
+              <input id="nama" name="nama" placeholder="Masukkan Nama Pasien" type="text" class="form-control"
+                required="required">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
+            <div class="col-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-area-chart"></i>
+                  </div>
+                </div>
+                <input id="tmp_lahir" name="tmp_lahir" type="text" required="required" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
+            <div class="col-8">
+              <input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control" required="required">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-4 col-form-label">Email</label>
+            <div class="col-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-address-book"></i>
+                  </div>
+                </div>
+                <input id="email" name="email" placeholder="Masukkan Email Pasien" type="text" class="form-control"
+                  required="required">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-4">Gender</label>
+            <div class="col-8">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input name="jk" id="jk_0" type="radio" class="custom-control-input" value="L" required="required">
+                <label for="jk_0" class="custom-control-label">Laki-Laki</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input name="jk" id="jk_1" type="radio" class="custom-control-input" value="P" required="required">
+                <label for="jk_1" class="custom-control-label">Perempuan</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="id_pasien" class="col-4 col-form-label">ID Pasien</label>
+            <div class="col-8">
+              <input id="id_pasien" name="id_pasien" placeholder="ID Pasien" type="text" class="form-control"
+                required="required">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="tanggal_regis" class="col-4 col-form-label">Tanggal Pemeriksaan</label>
+            <div class="col-8">
+              <input id="tanggal_regis" name="tanggal_regis" type="date" class="form-control" required="required">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="tinggi_p" class="col-4 col-form-label">Tinggi Pasien</label>
+            <div class="col-8">
+              <input id="tinggi_p" name="tinggi_p" placeholder="Masukkan Tinggi Pasien" type="number"
+                class="form-control" required="required">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="berat_p" class="col-4 col-form-label">Berat</label>
+            <div class="col-8">
+              <input id="berat_p" name="berat_p" placeholder="Masukkan Berat Pasien" type="number" class="form-control"
+                required="required">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-4 col-8">
+              <button name="submit" type="submit" class="btn btn-primary" value="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+
+        <?php
+        require_once "class_pasien.php";
+                $_submit = $_GET['submit'];
+                $_id = $_GET['id'];
+                $_kode = $_GET['kode'];
+                $_nama = $_GET['nama'];
+                $_tmp_lahir = $_GET['tmp_lahir'];
+                $_tgl_lahir = $_GET['tgl_lahir'];
+                $_email = $_GET['email'];
+                $_jk = $_GET['jk'];
+                $_id_pasien = $_GET['id_pasien'];
+                $_tanggal_regis = $_GET['tanggal_regis'];
+                $_tinggi_p = $_GET['tinggi_p'];
+                $_berat_p = $_GET['berat_p'];
+        $form_tes = new Pasien($_id, $_kode, $_nama, $_tmp_lahir, $_tgl_lahir, $_email, $_jk, $_id_pasien, $_tanggal_regis, $_tinggi_p, $_berat_p);
+        ?>
+        <?php  if (isset($_submit)) : ?>
+        <div class="row mt-3" style="border: 1px solid green;">
+          <div class="col-md-12 p-3">
+            <h4 class="text-center bg-success">Hasil Test Dari Data yang Telah Dimasukkan</h4>
+            <table class="table table-primary mt-4">
+
+              <thead>
+                <tr>
+                  <th scope="col">Tanggal Melakukan Test Pada Tanggal</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->tanggal ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Kode Pasien</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->kode ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Nama</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->nama ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Gender</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->gender ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Berat Pasien</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->berat ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Tinggi Pasien</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->tinggi ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Angka BMI</th>
+                  <th scope="col">:</th>
+                  <th scope="col"><?= $form_tes->nilai_bmi() ?></th>
+                </tr>
+
+                <tr>
+                  <th scope="col">Hasil</th>
+                  <th scope="col">:</th>
+                  <th scope="col">test menyatakan bahwa pasien memiliki nilai BMI yang <?= $form_tes->status_bmi() ?>
+                  </th>
+                </tr>
+
+              </thead>
+
+
+            </table>
+
+          </div>
+        </div>
+        <?php endif ?>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <h4>Project UTS</h4>
+      </div>
+      <!-- /.card-footer-->
+    </div>
+
+    <!-- /.card -->
+  </section>
+</div>
+
+<div class="row">
+  <section class="col-lg-12 connectedSortable">
+    <div class="card direct-chat direct-chat-primary">
+      <div class="card-header">
         <h3 class="card-title">Daftar Pasien</h3>
 
         <div class="card-tools">
@@ -18,15 +243,10 @@
       <div class="card-body p-3">
         <?php
         // require_once "class_bmiPasien.php";
-        require_once "class_pasien.php";
+        // require_once "class_pasien.php";
         // require_once "class_bmi.php";
 
-        $no = 1;
-        $ps1 = new Pasien(12345, "P001", "Ahmad", "Jakarta", "10-3-2000", "ahmadyani@gmail.com", "L", 1, "3-4-2022", 169, 69.8);
-        $ps2 = new Pasien(23456, "P002", "Rina", "Depok", "2-2-2001", "Rinariana@gmail.com", "P", 2, "3-5-2022", 165, 55.3);
-        $ps3 = new Pasien(34567, "P003", "Lutfi", "Jogja", "3-4-2001", "Lutfinurjannah@gmail.com", "L", 3, "4-5-2022", 171, 45.2);
-
-        $array_pasien = [$ps1, $ps2, $ps3];
+       
         ?>
 
         <table class="table">
@@ -56,44 +276,23 @@
               <td><?= $pasien->nilai_bmi() ?></td>
               <td><?= $pasien->status_bmi() ?></td>
             </tr>
-            <?php endforeach; ?>
+            <?php endforeach;   ?>
 
-      
+            <tr>
+              <th scope="row"><?= $no; ?></th>
+              <td><?= $form_tes->tanggal ?></td>
+              <td><?= $form_tes->kode ?></td>
+              <td><?= $form_tes->nama ?></td>
+              <td><?= $form_tes->gender ?></td>
+              <td><?= $form_tes->berat ?></td>
+              <td><?= $form_tes->tinggi ?></td>
+              <td><?= $form_tes->nilai_bmi() ?></td>
+              <td><?= $form_tes->status_bmi() ?></td>
+            </tr>
           </tbody>
         </table>
 
 
-      </div>
-      <!-- /.card-body -->
-      <div class="card-footer">
-        <h4>Project UTS</h4>
-      </div>
-      <!-- /.card-footer-->
-    </div>
-
-    <!-- /.card -->
-  </section>
-</div>
-
-<div class="row">
-  <section class="col-lg-12 connectedSortable">
-    <div class="card direct-chat direct-chat-primary">
-      <div class="card-header">
-        <h3 class="card-title">Form Pengukuran BMI</h3>
-
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-          </button>
-
-          <button type="button" class="btn btn-tool" data-card-widget="remove">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body p-3">
-        <h2>body</h2>
       </div>
       <!-- /.card-body -->
       <div class="card-footer">

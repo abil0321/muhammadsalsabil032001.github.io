@@ -244,9 +244,7 @@ echo '<br><br>Total Harga : '. number_format($total_harga);
           </form>
         </div>
 
-
-        <div class="border border-success rounded m-5 p-4">
-          <?php
+        <?php
 $_proses = $_POST['proses'];
 $_nama = $_POST['nama'];
 $_matkul = $_POST['matkul'];
@@ -314,7 +312,12 @@ switch ($_matkul) {
       default:
           echo "mana ada mass !!";
   }
+
+  if (isset($_proses)) : 
 ?>
+
+        <div class="border border-success rounded m-5 p-4">
+
 
           <div class="row mx-2">
             <div class="col-md-6">
@@ -386,6 +389,8 @@ switch ($_matkul) {
           <h6 class="text-center py-3 mt-5" style="background-color: #5eff89;">Proses: <?= $_proses?></h6>
 
         </div>
+
+        <?php endif?>
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
