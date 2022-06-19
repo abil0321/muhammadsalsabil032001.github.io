@@ -46,7 +46,7 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="<?= base_url("praktikum/praktikum_8/pertemuan8/index")?>" class="nav-link active">
+							<a href="<?= base_url("praktikum/praktikum_8/pertemuan8/index")?>" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
 								<p>Praktikum 8</p>
 							</a>
@@ -60,7 +60,13 @@
 						<li class="nav-item">
 							<a href="<?= base_url("praktikum/praktikum_10/pertemuan10/index")?>" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Peaktikum 10</p>
+								<p>Praktikum 10</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url("praktikum/praktikum_11/pertemuan11/index")?>" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Peaktikum 11</p>
 							</a>
 						</li>
 					</ul>
@@ -114,6 +120,16 @@
 							</a>
 						</li>
 					</ul>
+				</li>
+
+				<li class="nav-item">
+					<a href="<?= base_url('praktikum/praktikum_12/auth/logout')?>" style="color: black;"
+						class="nav-link btn btn-warning">
+						<i class="nav-icon fa fa-power-off"></i>
+						<p>
+							Logout
+						</p>
+					</a>
 				</li>
 
 			</ul>

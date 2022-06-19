@@ -13,5 +13,34 @@ class Mahasiswa_model extends CI_Model {
     $predikat = ($this->ipk >= 3.75)?"Cumlaude" : "Baik";
    return $predikat;
    }
+   
+   function getDataMahasiswa(){
+       $query = $this->db->get('tbl_mahasiswa'); 
+       return $query->result();
+   }
+
+   public function insertDataMahasiswa($data)
+   {
+       $this->db->insert('tbl_mahasiswa', $data);
+   }
+
+   public function getDataMahasiswaDetail($id)
+   {
+       $this->db->where('id', $id);
+       $query = $this->db->get('tbl_mahasiswa');
+       return $query->row(); 
+   }
+
+   public function updateDataMahasiswa($nim, $data)
+   {
+       $this->db->where('nim', $nim);
+       $this->db->update('tbl_mahasiswa', $data);
+   }
+
+   public function deleteDataMahasiswa($id)
+   {
+       $this->db->where('id', $id);
+       $this->db->delete('tbl_mahasiswa');
+   }
    }
 ?>
