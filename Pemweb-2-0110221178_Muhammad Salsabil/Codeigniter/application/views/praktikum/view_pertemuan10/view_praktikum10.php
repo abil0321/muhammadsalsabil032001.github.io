@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Praktikum ke-8</title>
+	<title>Praktikum ke-10</title>
 
 	<?php $this->load->view("backend/template/meta");?>
 	<div class="wrapper">

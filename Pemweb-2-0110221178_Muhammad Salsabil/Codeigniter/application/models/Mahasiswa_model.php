@@ -31,9 +31,9 @@ class Mahasiswa_model extends CI_Model {
        return $query->row(); 
    }
 
-   public function updateDataMahasiswa($nim, $data)
+   public function updateDataMahasiswa($id, $data)
    {
-       $this->db->where('nim', $nim);
+       $this->db->where('id', $id);
        $this->db->update('tbl_mahasiswa', $data);
    }
 

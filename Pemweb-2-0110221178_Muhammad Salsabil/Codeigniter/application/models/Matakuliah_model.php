@@ -22,9 +22,9 @@ class Matakuliah_model extends CI_Model {
        return $query->row(); 
    }
 
-   public function updateDataMatakuliah($kode, $data)
+   public function updateDataMatakuliah($id, $data)
    {
-       $this->db->where('kode', $kode);
+       $this->db->where('id', $id);
        $this->db->update('tbl_Matakuliah', $data);
    }
 

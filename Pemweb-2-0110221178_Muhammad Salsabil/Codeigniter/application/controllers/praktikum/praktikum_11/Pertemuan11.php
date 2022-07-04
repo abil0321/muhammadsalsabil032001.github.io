@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pertemuan11 extends CI_Controller {
 
-	
-
 	public function __construct() {
 		parent:: __construct();
 		if (!$this->session->userdata('email')) {
@@ -50,6 +48,24 @@ class Pertemuan11 extends CI_Controller {
 		$ipk = $this->input->post('ipk');
 		$predikat = $this->input->post('predikat');
 
+		$foto = $_FILES['foto'];
+		if ($foto = '') {
+			# code...
+		} else {
+			$config['upload_path']		= 'assets/images/foto_mahasiswa';
+			$config['allowed_types']	= 'jpg|png|gif';
+
+			$this->load->library('upload', $config);
+
+			if (!$this->upload->do_upload('foto')) {
+				echo 'Upload GAGAL' ;
+				die();
+			} else {
+				$foto = $this->upload->data('file_name');
+			}
+			
+		}
+
 		$ArrayInsert = array(
 			'nama' => $nama,
 			'nim' => $nim,
@@ -58,6 +74,7 @@ class Pertemuan11 extends CI_Controller {
 			'tgl_lahir' => $tgl_lahir,
 			'ipk' => $ipk,
 			'predikat' => $predikat,
+			'foto' => $foto,
 		);
 
 		// echo "<pre>";
@@ -83,6 +100,8 @@ class Pertemuan11 extends CI_Controller {
 
 	public function fungsi_edit_mahasiswa()
 	{
+		// $id = $this->Mahasiswa_model->getDataMahasiswaDetail($id);
+
 		$nama = $this->input->post('nama');
 		$nim = $this->input->post('nim');
 		$gender = $this->input->post('gender');
@@ -90,9 +109,11 @@ class Pertemuan11 extends CI_Controller {
 		$tgl_lahir = $this->input->post('tgl_lahir');
 		$ipk = $this->input->post('ipk');
 		$predikat = $this->input->post('predikat');
+		$id = $this->input->post('id');
 
 		$ArrayUpdate = array(
 			'nama' => $nama,
+			'id' => $id,
 			'nim' => $nim,
 			'gender' => $gender,
 			'tmp_lahir' => $tmp_lahir,
@@ -105,7 +126,7 @@ class Pertemuan11 extends CI_Controller {
 		// print_r($ArrayUpdate);
 		// echo "</pre>";
 
-		$this->Mahasiswa_model->updateDataMahasiswa($nim, $ArrayUpdate);
+		$this->Mahasiswa_model->updateDataMahasiswa($id, $ArrayUpdate);
 		redirect(base_url('praktikum/praktikum_11/pertemuan11/mahasiswa'));
 	}
 
@@ -137,6 +158,24 @@ class Pertemuan11 extends CI_Controller {
 		$tgl_lahir = $this->input->post('tgl_lahir');
 		$nidn = $this->input->post('nidn');
 		$pendidikan = $this->input->post('pendidikan');
+		
+		$foto = $_FILES['foto'];
+		if ($foto = '') {
+			# code...
+		} else {
+			$config['upload_path']		= 'assets/images/foto_dosen';
+			$config['allowed_types']	= 'jpg|png|gif';
+
+			$this->load->library('upload', $config);
+
+			if (!$this->upload->do_upload('foto')) {
+				echo 'Upload GAGAL' ;
+				die();
+			} else {
+				$foto = $this->upload->data('file_name');
+			}
+			
+		}
 
 		$ArrayInsert = array(
 			'nama' => $nama,
@@ -144,7 +183,8 @@ class Pertemuan11 extends CI_Controller {
 			'tmp_lahir' => $tmp_lahir,
 			'tgl_lahir' => $tgl_lahir,
 			'nidn' => $nidn,
-			'pendidikan' => $pendidikan
+			'pendidikan' => $pendidikan,
+			'foto' => $foto
 		);
 
 		// echo "<pre>";
@@ -171,6 +211,7 @@ class Pertemuan11 extends CI_Controller {
 	public function fungsi_edit_dosen()
 	{
 		$nama = $this->input->post('nama');
+		$id = $this->input->post('id');
 		$gender = $this->input->post('gender');
 		$tmp_lahir = $this->input->post('tmp_lahir');
 		$tgl_lahir = $this->input->post('tgl_lahir');
@@ -179,6 +220,7 @@ class Pertemuan11 extends CI_Controller {
 
 		$ArrayUpdate = array(
 			'nama' => $nama,
+			'id' => $id,
 			'gender' => $gender,
 			'tmp_lahir' => $tmp_lahir,
 			'tgl_lahir' => $tgl_lahir,
@@ -190,7 +232,7 @@ class Pertemuan11 extends CI_Controller {
 		// print_r($ArrayInsert);
 		// echo "</pre>";
 		
-		$this->Dosen_model->updateDataDosen($nidn, $ArrayUpdate);
+		$this->Dosen_model->updateDataDosen($id, $ArrayUpdate);
 		redirect(base_url('praktikum/praktikum_11/pertemuan11/dosen'));
 	}
 
@@ -250,11 +292,13 @@ class Pertemuan11 extends CI_Controller {
 	public function fungsi_edit_matakuliah()
 	{
 		$nama = $this->input->post('nama');
+		$id = $this->input->post('id');
 		$sks = $this->input->post('sks');
 		$kode = $this->input->post('kode');
 		
 
 		$ArrayUpdate = array(
+			'id' => $id,
 			'nama' => $nama,
 			'sks' => $sks,
 			'kode' => $kode
@@ -264,7 +308,7 @@ class Pertemuan11 extends CI_Controller {
 		// print_r($ArrayInsert);
 		// echo "</pre>";
 
-		$this->Matakuliah_model->updateDataMatakuliah($kode, $ArrayUpdate);
+		$this->Matakuliah_model->updateDataMatakuliah($id, $ArrayUpdate);
 		redirect(base_url('praktikum/praktikum_11/pertemuan11/matakuliah'));
 	}
 

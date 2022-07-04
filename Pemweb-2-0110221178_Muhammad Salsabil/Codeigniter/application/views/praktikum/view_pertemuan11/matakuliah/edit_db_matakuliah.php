@@ -49,6 +49,21 @@
 				<div class="col-md-12">
 					<form action="<?php echo base_url("praktikum/praktikum_11/pertemuan11/fungsi_edit_matakuliah")?>"
 						method="post">
+						<div class="form-group row" style="display: none;">
+							<label for="id" class="col-4 col-form-label">Id</label>
+							<div class="col-8">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa fa-address-card"></i>
+										</div>
+									</div>
+									<input id="id" name="id" placeholder="id mahasiswa" type="text" class="form-control"
+										required="required" value="<?php echo $queryDetailMtl->id?>">
+								</div>
+							</div>
+						</div>
+
 						<div class="form-group row">
 							<label for="nama" class="col-4 col-form-label">Nama</label>
 							<div class="col-8">

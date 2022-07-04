@@ -56,6 +56,7 @@
 						<thead>
 							<tr>
 								<th>#</th>
+								<th>foto</th>
 								<th>NIM</th>
 								<th>Nama</th>
 								<th>Gender</th>
@@ -74,8 +75,16 @@
 							$no = 1;
                         foreach ($queryAllMhs as $mahasiswa) {
                         ?>
+
 							<tr>
 								<td><?php echo $no++?></td>
+								<td>
+									<img style="width: 150px;"
+										src="<?php echo base_url("assets/images")?>/foto_mahasiswa/<?php echo $mahasiswa->foto ?>"
+										alt="">
+
+
+								</td>
 								<td><?php echo $mahasiswa->nim ?></td>
 								<td><?php echo $mahasiswa->nama ?></td>
 								<td><?php echo $mahasiswa->gender ?></td>

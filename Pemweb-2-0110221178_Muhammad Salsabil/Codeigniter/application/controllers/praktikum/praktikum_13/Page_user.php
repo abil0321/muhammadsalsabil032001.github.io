@@ -21,4 +21,9 @@ class Page_user extends CI_Controller
 
         $this->load->view('praktikum/view_pertemuan13/halaman_website', $data);
     }
+
+    public function bukti()
+    {
+        $this->load->view('praktikum/view_pertemuan13/view_praktikum13');
+    }
 }

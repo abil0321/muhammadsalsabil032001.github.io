@@ -46,92 +46,100 @@
 			<!-- Main content -->
 			<div class="row">
 				<div class="col-md-12 px-5">
-					<form action="<?php echo base_url("praktikum/praktikum_11/pertemuan11/fungsi_create_mahasiswa")?>"
-						method="post">
-						<div class="form-group row">
-							<label for="nama" class="col-4 col-form-label">Nama</label>
-							<div class="col-8">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-address-card"></i>
-										</div>
+					<?php echo form_open_multipart('praktikum/praktikum_11/pertemuan11/fungsi_create_mahasiswa');?>
+
+					<div class="form-group row">
+						<label for="nama" class="col-4 col-form-label">Nama</label>
+						<div class="col-8">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-address-card"></i>
 									</div>
-									<input id="nama" name="nama" placeholder="nama mahasiswa" type="text"
-										class="form-control" required="required">
 								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="nim" class="col-4 col-form-label">NIM</label>
-							<div class="col-8">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-500px"></i>
-										</div>
-									</div>
-									<input id="nim" name="nim" placeholder="masukkan NIM" type="text"
-										required="required" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-4">Gender</label>
-							<div class="col-8">
-								<div class="custom-control custom-radio custom-control-inline">
-									<input name="gender" id="gender_0" type="radio" class="custom-control-input"
-										value="lk" required="required">
-									<label for="gender_0" class="custom-control-label">Laki-Laki</label>
-								</div>
-								<div class="custom-control custom-radio custom-control-inline">
-									<input name="gender" id="gender_1" type="radio" class="custom-control-input"
-										value="pr" required="required">
-									<label for="gender_1" class="custom-control-label">Perempuan</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
-							<div class="col-8">
-								<input id="tmp_lahir" name="tmp_lahir" placeholder="masukkan tempat lahir" type="text"
+								<input id="nama" name="nama" placeholder="nama mahasiswa" type="text"
 									class="form-control" required="required">
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
-							<div class="col-8">
-								<input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control"
+					</div>
+					<div class="form-group row">
+						<label for="nim" class="col-4 col-form-label">NIM</label>
+						<div class="col-8">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-500px"></i>
+									</div>
+								</div>
+								<input id="nim" name="nim" placeholder="masukkan NIM" type="text" required="required"
+									class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-4">Gender</label>
+						<div class="col-8">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input name="gender" id="gender_0" type="radio" class="custom-control-input" value="lk"
+									required="required">
+								<label for="gender_0" class="custom-control-label">Laki-Laki</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input name="gender" id="gender_1" type="radio" class="custom-control-input" value="pr"
+									required="required">
+								<label for="gender_1" class="custom-control-label">Perempuan</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
+						<div class="col-8">
+							<input id="tmp_lahir" name="tmp_lahir" placeholder="masukkan tempat lahir" type="text"
+								class="form-control" required="required">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
+						<div class="col-8">
+							<input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control" required="required">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="ipk" class="col-4 col-form-label">IPK</label>
+						<div class="col-8">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-clipboard"></i>
+									</div>
+								</div>
+								<input id="ipk" name="ipk" placeholder="Masukkan IPK" type="text" class="form-control"
 									required="required">
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="ipk" class="col-4 col-form-label">IPK</label>
-							<div class="col-8">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-clipboard"></i>
-										</div>
-									</div>
-									<input id="ipk" name="ipk" placeholder="Masukkan IPK" type="text"
-										class="form-control" required="required">
-								</div>
-							</div>
+					</div>
+					<div class="form-group row">
+						<label for="predikat" class="col-4 col-form-label">Predikat</label>
+						<div class="col-8">
+							<input id="predikat" name="predikat" placeholder="Masukkan Predikat" type="text"
+								class="form-control" required="required">
 						</div>
-						<div class="form-group row">
-							<label for="predikat" class="col-4 col-form-label">Predikat</label>
-							<div class="col-8">
-								<input id="predikat" name="predikat" placeholder="Masukkan Predikat" type="text"
-									class="form-control" required="required">
-							</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="foto" class="col-4 col-form-label">Foto</label>
+						<div class="col-8">
+							<input id="foto" name="foto" placeholder="Masukkan foto" type="file" class="form-control"
+								required="required">
 						</div>
-						<div class="form-group row">
-							<div class="offset-4 col-8">
-								<button name="submit" type="submit" class="btn btn-primary">Submit</button>
-							</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="offset-4 col-8">
+							<button name="submit" type="submit" class="btn btn-primary">Submit</button>
 						</div>
-					</form>
+					</div>
+					<?php echo form_close(); ?>
 				</div>
 			</div>
 			<!-- /.content -->

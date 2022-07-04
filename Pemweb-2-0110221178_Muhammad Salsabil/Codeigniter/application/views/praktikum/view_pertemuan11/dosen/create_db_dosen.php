@@ -46,78 +46,86 @@
 			<!-- Main content -->
 			<div class="row">
 				<div class="col-md-12">
-					<form action="<?php echo base_url("praktikum/praktikum_11/pertemuan11/fungsi_create_dosen")?>"
-						method="post">
-						<div class="form-group row">
-							<label for="nama" class="col-4 col-form-label">Nama</label>
-							<div class="col-8">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-address-card"></i>
-										</div>
+					<?php echo form_open_multipart('praktikum/praktikum_11/pertemuan11/fungsi_create_dosen');?>
+
+					<div class="form-group row">
+						<label for="nama" class="col-4 col-form-label">Nama</label>
+						<div class="col-8">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-address-card"></i>
 									</div>
-									<input id="nama" name="nama" placeholder="nama dosen" type="text"
-										class="form-control" required="required">
 								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-4">Gender</label>
-							<div class="col-8">
-								<div class="custom-control custom-radio custom-control-inline">
-									<input name="gender" id="gender_0" type="radio" class="custom-control-input"
-										value="lk" required="required">
-									<label for="gender_0" class="custom-control-label">Laki-Laki</label>
-								</div>
-								<div class="custom-control custom-radio custom-control-inline">
-									<input name="gender" id="gender_1" type="radio" class="custom-control-input"
-										value="pr" required="required">
-									<label for="gender_1" class="custom-control-label">Perempuan</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
-							<div class="col-8">
-								<input id="tmp_lahir" name="tmp_lahir" placeholder="masukkan tempat lahir" type="text"
-									class="form-control" required="required">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
-							<div class="col-8">
-								<input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control"
+								<input id="nama" name="nama" placeholder="nama dosen" type="text" class="form-control"
 									required="required">
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="nidn" class="col-4 col-form-label">NIDN</label>
-							<div class="col-8">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-500px"></i>
-										</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-4">Gender</label>
+						<div class="col-8">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input name="gender" id="gender_0" type="radio" class="custom-control-input" value="lk"
+									required="required">
+								<label for="gender_0" class="custom-control-label">Laki-Laki</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input name="gender" id="gender_1" type="radio" class="custom-control-input" value="pr"
+									required="required">
+								<label for="gender_1" class="custom-control-label">Perempuan</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
+						<div class="col-8">
+							<input id="tmp_lahir" name="tmp_lahir" placeholder="masukkan tempat lahir" type="text"
+								class="form-control" required="required">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
+						<div class="col-8">
+							<input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control" required="required">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="nidn" class="col-4 col-form-label">NIDN</label>
+						<div class="col-8">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-500px"></i>
 									</div>
-									<input id="nidn" name="nidn" placeholder="masukkan NIDN" type="text"
-										required="required" class="form-control">
 								</div>
+								<input id="nidn" name="nidn" placeholder="masukkan NIDN" type="text" required="required"
+									class="form-control">
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="pendidikan" class="col-4 col-form-label">Pendidikan</label>
-							<div class="col-8">
-								<input id="pendidikan" name="pendidikan" placeholder="masukkan pendidikan akhir"
-									type="text" required="required" class="form-control">
-							</div>
+					</div>
+					<div class="form-group row">
+						<label for="pendidikan" class="col-4 col-form-label">Pendidikan</label>
+						<div class="col-8">
+							<input id="pendidikan" name="pendidikan" placeholder="masukkan pendidikan akhir" type="text"
+								required="required" class="form-control">
 						</div>
-						<div class="form-group row">
-							<div class="offset-4 col-8">
-								<button name="submit" type="submit" class="btn btn-primary">Submit</button>
-							</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="foto" class="col-4 col-form-label">Foto</label>
+						<div class="col-8">
+							<input id="foto" name="foto" placeholder="Masukkan foto" type="file" class="form-control"
+								required="required">
 						</div>
-					</form>
+					</div>
+
+					<div class="form-group row">
+						<div class="offset-4 col-8">
+							<button name="submit" type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+					<?php form_close(); ?>
 				</div>
 			</div>
 			<!-- /.content -->

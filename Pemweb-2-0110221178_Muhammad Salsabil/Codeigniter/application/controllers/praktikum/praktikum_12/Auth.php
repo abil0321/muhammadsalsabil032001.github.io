@@ -120,4 +120,9 @@ class Auth extends CI_Controller {
          redirect('praktikum/praktikum_12/auth/index');
         
     }
+
+    public function bukti()
+    {
+        $this->load->view('praktikum/view_pertemuan12/view_praktikum12');
+    }
 }

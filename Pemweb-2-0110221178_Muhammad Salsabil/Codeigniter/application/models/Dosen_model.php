@@ -25,9 +25,9 @@ class Dosen_model extends CI_Model {
        return $query->row(); 
    }
 
-   public function updateDataDosen($nidn, $data)
+   public function updateDataDosen($id, $data)
    {
-       $this->db->where('nidn', $nidn);
+       $this->db->where('id', $id);
        $this->db->update('tbl_dosen', $data);
    }
 

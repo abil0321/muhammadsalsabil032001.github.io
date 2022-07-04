@@ -56,6 +56,7 @@
 						<thead>
 							<tr>
 								<th>#</th>
+								<th>Foto</th>
 								<th>Nama</th>
 								<th>Gender</th>
 								<th>tmp_lahir</th>
@@ -74,6 +75,13 @@
                         foreach ($queryAllDsn as $dosen) {
                         ?>
 							<tr>
+								<td>
+									<img style="width: 150px;"
+										src="<?php echo base_url("assets/images")?>/foto_dosen/<?php echo $dosen->foto ?>"
+										alt="">
+
+
+								</td>
 								<td><?php echo $no++?></td>
 								<td><?php echo $dosen->nama ?></td>
 								<td><?php echo $dosen->gender ?></td>

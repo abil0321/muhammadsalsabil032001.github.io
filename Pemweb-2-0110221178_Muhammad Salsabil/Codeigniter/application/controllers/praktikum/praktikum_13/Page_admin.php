@@ -13,6 +13,6 @@ class Page_admin extends CI_Controller
     }
     public function index()
     {
-        echo "Selamat Datang Admin !!";
+        $this->load->view('praktikum/view_pertemuan13/view_praktikum13');
     }
 }
